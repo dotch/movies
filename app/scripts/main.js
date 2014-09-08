@@ -1,10 +1,10 @@
 /* global data */
 
-var gross = _.pluck(data, 'gross');
+var theater = _.pluck(data, 'gross');
 var dls = _.pluck(data, 'downloads');
 
 
-gross.unshift('gross');
+theater.unshift('theater');
 dls.unshift('downloads');
 
 // c3.generate({
@@ -35,7 +35,7 @@ c3.generate({
   bindto: '#bar',
   data: {
     columns: [
-      gross,
+      theater,
       dls
     ],
     axes: {
@@ -58,6 +58,11 @@ c3.generate({
       show: true, // ADD
       tick: {
         format: d3.format('s')
+      }
+    },
+    x: {
+      tick: {
+        fit: false
       }
     }
   },
